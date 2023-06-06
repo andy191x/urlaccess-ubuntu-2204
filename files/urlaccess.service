@@ -1,0 +1,12 @@
+[Unit]
+Description=urlaccess
+After=network.target remote-fs.target nss-lookup.target
+
+[Service]
+Type=simple
+User=urlaccess
+ExecStart=/usr/bin/node /home/urlaccess/urlaccess/dist/index.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
